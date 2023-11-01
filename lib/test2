@@ -1,0 +1,53 @@
+ ListView(
+        children:  <Widget>[
+           const SizedBox(
+            height: 20.0,
+          ),
+          const Text(
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            'Please enter the notes to save',
+          ),
+           const SizedBox(
+            height: 20.0,
+          ),
+          TextFormField(
+            controller: _tempNote,
+            keyboardType: TextInputType.text,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: "New Note",
+            ),
+          ),
+          const SizedBox(
+            height: 20.0,
+          ),
+          FilledButton(
+            onPressed: (){
+               _temp1 = _tempNote.text;
+              _tempNote.clear();
+              notes();
+            },
+            child: const Text('Save'),
+          ),
+          const SizedBox(
+            height: 20.0,
+          ),
+          Card(
+            elevation: 0,
+            color: Theme.of(context).colorScheme.surfaceVariant,
+            child:  SizedBox(
+              width: 310,
+              height: 100,
+              child: Center(
+                child:  Card(
+                    child: ListTile(
+                      title: const Text("Saved Notes.",
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                      subtitle: Text(_temp1)
+                      ),
+                  ),
+          ),
+              ),
+            ),
+        ],
+      ),

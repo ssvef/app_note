@@ -1,0 +1,7 @@
+    String tempNoteContent=noteContent;
+      if(tempNoteContent == ""){
+        noteMsg ="The list is empty.";
+      }
+       if(tempNoteContent.isNotEmpty && tempNoteContent != ""){
+      String noteMsg ="Note {$counter}.\n Content:{$noteContent}".replaceAll("|", "\n");
+      }
